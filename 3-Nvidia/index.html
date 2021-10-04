@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head profile="http://www.w3.org/2005/10/profile">
+        <link rel="icon" 
+              type="image/png" 
+              href="images/logoA.png" />
+    <link rel="stylesheet" href="style.css">
+    <title>Forge A PC - Nvidia</title>
+</head>
+<body>
+<section id="Intro">
+<nav>
+    <ul>
+        <li><img src="Images/logoa.png" alt=""></li>
+        <li><a href="#Intro" class="sliding-middle-out">Introduction</a></li>
+        <li><a href="#GPU" class="sliding-middle-out">GPU</a></li>
+        <li><a href="#CPU" class="sliding-middle-out">CPU</a></li>
+        <li><a href="#RAM" class="sliding-middle-out">RAM</a></li>
+        <li><a href="#MB" class="sliding-middle-out">MB</a></li>
+        
+    </ul>
+</nav>
+    <div class="content">
+        <div class="intro-img"> 
+            <img src="Images/intropc1.png" alt="">
+        </div>
+        <div class="intro-text"> 
+        <h1>FORGE A PC</h1>
+        <p>Featuring Nvidia graphics card, AMD/Intel processor, <br>16-64gb DDR4 Memory, ASUS Motherboard and <br>customizable lighting.</p> 
+        </div>   
+    </div>
+</section>
+
+<section id="GPU"> 
+    <div class="gpucontainer">
+        <div class="gpuh1"><h1>Graphics Card</h1></div>
+        <div class="box" id='box1'>
+            <p class="prtx"></p>
+            <img src="images/rtx-2060.png" class="model" alt="Rtx2060">
+            <div class="details">
+                <h1>RTX 2060</h1>
+                <h1>$399</h1>
+                <p>Featuring Nvidia's new technology, providing 60+ fps in FHD, Rtx 2060 is the best entry!</p>
+                <input type="radio" name="gpu1" id="gpu1" class= "gpuc" onclick = 'nvidia()'>  <label for="gpu1">Select</label>
+            </div>
+        </div>
+
+        <div class="box" id='box2'>
+            <img src="images/rtx-2070.png" class="model1" alt="Rtx2060">
+            <div class="details">
+                <h1>RTX 2070 S</h1>
+                <h1>$499</h1>
+                <p>Featuring Nvidia's new technology, providing 60+ fps in QHD(2k), Rtx 2070 is the best price-to-performance!</p>
+                <input type="radio" name="gpu1" id="gpu2" class= "gpuc" onclick = 'nvidia()'>  <label for="gpu2">Select</label>
+            </div>
+        </div>
+
+        <div class="box" id='box3'>
+            <img src="images/rtx3000.png" class="model" alt="Rtx2060">
+            <div class="details">
+                <h1>RTX 3080</h1>
+                <h1>$699</h1>
+                <p>Featuring Nvidia's new technology, providing 60+ fps in UHD(4k), Rtx 3080 provides the best money can buy!</p>
+                <input type="radio" name="gpu1" id="gpu3" class= "gpuc" onclick = 'nvidia()'>  <label for="gpu3">Select</label>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section id="CPU">
+    <div class="cpucontainer">
+       <div class="cpuh1"><h1>CPU</h1></div> 
+        <div class="cpubox intel-box">
+            <h1>Intel</h1>
+            <p class="intelp">It is the world's largest semiconductor chip maker and the creator of the x86 microprocessor family, which offers a faster clock speed at a greater cost. <br>Best for Gaming<br>Best Clock Speed</p>
+            <input type="radio" name="cpu" id="i3" class= "cpu1" onclick = 'radio()'>  <label for="i3">I3-10300</label>
+            <input type="radio" name="cpu" id="i5" class= "cpu1" onclick='radio()'>  <label for="i5">I5-10600K</label>
+            <input type="radio" name="cpu" id="i7" class= "cpu1" onclick='radio()'>  <label for="i7">I7-10700K</label>
+        </div>
+        <div class="cpubox amd-box">
+            <h1>AMD</h1>
+            <p class="amdp">It creates computer processors and related technologies for both commercial and consumer sectors, and it offers the best price-to-performance ratio.<br>Best for Gaming<br>Best for Workstation</p>
+            <input type="radio" name="cpu" id="r3" class= "cpu2" onclick='radio()'><label for="r3">R5-4600</label>
+            <input type="radio" name="cpu" id="r5" class= "cpu2" onclick='radio()'> <label for="r5">R5-5600X</label>
+            <input type="radio" name="cpu" id="r7" class= "cpu2" onclick='radio()'> <label for="r7">R9-5950X</label>
+        </div>
+        <div class="intelimg" id="intcod"><img src="Images/intel.png" alt=""></div>
+        <div class="amdimage" id="amdcod"><img src="Images/amd2.png" alt=""></div>   
+    </div>
+</section>
+
+<section id="RAM">
+    <div class="ramcontainer">
+        <div class="rambox2">
+           <div class="ramh1" id="ramcod"> <h1>RAM</h1></div>
+            <p class="ramp1">RAM is a type of computer memory that can be read and modified in any sequence and is commonly used to store working data and machine code.
+                <br><br>The provider of the RAM sticks is HyperX or Corsair, depending on the performance of the sticks, both providing top-tier performance.
+            </p>
+        </div>
+        <div class="rambox1">
+            <h1>Standard Performance</h1>
+            <input type="radio" name="ram" id="ram1" class= "ram1" onclick='ram()'>  <label for="ram1">16GB RAM</label>
+            <input type="radio" name="ram" id="ram2" class= "ram1" onclick='ram()'>  <label for="ram2">32GB RAM</label>
+            <input type="radio" name="ram" id="ram3" class= "ram1" onclick='ram()'>  <label for="ram3">64GB RAM</label>
+            <br><br>
+            <h1>Extreme Performance</h1>
+            <input type="radio" name="ram" id="ram4" class= "ram1" onclick='ram()'>  <label for="ram4">16GB RAM</label>
+            <input type="radio" name="ram" id="ram5" class= "ram1" onclick='ram()'>  <label for="ram5">32GB RAM</label>
+            <input type="radio" name="ram" id="ram6" class= "ram1" onclick='ram()'>  <label for="ram6">64GB RAM</label>
+        </div>  
+    </div>
+</section>
+
+<section id="MB">
+    <div class="mbcontainer">
+      <div class="mbh1"><h1>Motherboard</h1></div>
+        <div class="mbbox2">
+            <h1>Select your MB</h1> <br><br><br>
+            <input type="radio" name="mb" id="mb1" class= "ram1">  <label for="mb1">Entry Level</label>
+            <input type="radio" name="mb" id="mb2" class= "ram1">  <label for="mb2">Mid Range</label>
+            <input type="radio" name="mb" id="mb3" class= "ram1">  <label for="mb3">Premium</label>
+        </div> 
+        <div class="mbbox1">
+            <h1>About Motherboards</h1>
+            <p class="intelp">A motherboard provides the electrical connections that allow the system's other components to interact with one another. It also includes the central processing unit and hosts additional subsystems and devices, unlike a backplane.<br><br> The provider of the motherboards is Asus/Gigabyte, depending on the selection.
+            </p>
+        </div> 
+    </div>
+</section>
+
+<section id="submit">
+    <div class="submitcontainer"><a href="../4-Animation/index.html">
+        <button class="btn btn-border-pop">Submit</button></div></a></a-href>
+</section>
+
+ <script src="script.js"></script>
+</body>
+</html>

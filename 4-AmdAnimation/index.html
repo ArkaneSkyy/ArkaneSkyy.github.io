@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@4.2.1/dist/aframe-event-set-component.min.js"></script>
+</head>
+<body>
+
+</body>
+<a-scene>
+    <a-assets>
+        <a-asset-item id="case" src="Assets/scene.gltf"></a-asset-item>
+        <a-asset-item id="heatsink" src="Assets/Cooler/heatsink.gltf"></a-asset-item>
+        <a-asset-item id="Fan" src="Assets/Fan/ono.gltf"></a-asset-item>
+        <a-asset-item id="gpu" src="Assets/Gpu1/scene.gltf"></a-asset-item>
+    </a-assets>
+        
+    <a-entity>
+    <a-entity id="rig" position ="0 0 8.11"
+                        rotation="0 -180 0"
+                        movement-controls="fly: true">
+        <a-camera> <a-entity cursor position="0 0 -1"
+                        geometry="primitive: sphere; radius: 0.005"
+                        material="color: #fff; shader: flat"></a-entity>
+        </a-camera>
+    </a-entity>
+   
+    
+    <a-entity light="type: ambient;
+                        color: #BBB"></a-entity>
+    <a-entity light="type: directional;
+                color: #FFFFFF;
+                castShadow: true;
+                distance: 1;
+                intensity: 1.3"
+                position="3.425 12.595 13.682"></a-entity>    
+
+<a-entity id="computer">
+    <a-entity gltf-model=#case></a-entity>
+    <!-- case fans -->
+    <a-entity gltf-model=#Fan
+                scale="15 15 15"
+                position="2.655 2.263 -0.03"animation="property: rotation; to: 360 0 0; loop: true; dur: 600;easing:linear"></a-entity>
+    <a-entity gltf-model=#Fan 
+                scale="15 15 15"
+                position="2.655 0.550 -0.03" animation="property: rotation; to: 360 0 0; loop: true; dur: 600;easing:linear"></a-entity>
+    <a-entity  gltf-model=#Fan 
+                scale="14 14 14"
+                position="-1.515 2.489 0.265" animation="property: rotation; to: 360 0 0; loop: true; dur: 500;easing:linear"></a-entity>
+
+<a-entity id="cooler" position="9.09 1.875 7.973"
+                        rotation="-90 -29.58 -173.59">
+    <a-entity  gltf-model=#heatsink
+                position="-0.2 2.1 -0.2"
+                scale="9 9 9"
+                rotation="90 0 0"></a-entity>
+    <a-entity  gltf-model=#Fan
+                scale="9 9 9"
+                position="0.381 2.081 -0.202"animation="property: rotation; to: 360 0 0; loop: true; dur: 200;easing:linear"></a-entity>
+</a-entity>
+    
+    <a-entity  id="gpu1" gltf-model="#gpu" 
+                scale="0.002 0.002 0.002"
+                rotation="90 -76 -16"
+                position="7.781 0.229 5.637">
+            </a-entity>
+
+            <!-- Motherboard -->
+    <a-box position="-0.1 1.5 -1.1" width="2.5" height="3" depth="0.05" color="#0e0e10"></a-box>
+
+    <!-- Motherboard screws -->
+    <a-cylinder position="1.02 2.88 -1.1" radius="0.04" height="0.1" color="#151519" rotation="90 0 0"></a-cylinder>
+    <a-cylinder position="-1.24 2.88 -1.1" radius="0.04" height="0.1" color="#151519" rotation="90 0 0"></a-cylinder>
+    <a-cylinder position="1.02 0.1 -1.1" radius="0.04" height="0.1" color="#151519" rotation="90 0 0"></a-cylinder>
+    <a-cylinder position="-1.24 0.1 -1.1" radius="0.04" height="0.1" color="#151519" rotation="90 0 0"></a-cylinder>
+
+    <!-- MEMORY STICKS(RAM) -->
+    <a-entity id="ram" position="-5.935 -0.817 5.828" rotation="0 30 0">
+    <a-box  position="0.5 2.1 -0.91" width="0.05" height="1.2" depth="0.3" color="#ED1C24"></a-box>
+    <a-box position="0.6 2.1 -0.91" width="0.05" height="1.2" depth="0.3" color="#ED1C24"></a-box>
+    <a-box position="0.7 2.1 -0.91" width="0.05" height="1.2" depth="0.3" color="#ED1C24"></a-box>
+    <a-box position="0.8 2.1 -0.91" width="0.05" height="1.2" depth="0.3" color="#ED1C24"></a-box>
+</a-entity>
+
+    <!-- GPU BRACKET -->
+    <a-box position="-0.53 1.15 -1.1" width="1.3" height="0.1" depth="0.2" color="#151519"></a-box>
+
+    <!-- Motherboard components -->
+    <a-box position="-1.09 2.15 -1.08" width="0.5" height="1.1" depth="0.4" color="#151519"></a-box>
+    <a-box position="2.475 0.591 -0.036" width="0.05" height="0.05" depth="2" color="black"></a-box>
+    <a-cylinder position="2.512 0.591 0.007"  height="0.01" radius="0.3" rotation="0 0 90" color=black></a-cylinder>
+    <a-box position="2.475 2.292 -0.036" width="0.05" height="0.05" depth="2" color="black"></a-box>
+    <a-cylinder position="2.526 2.258 0.007"  height="0.01" radius="0.3" rotation="0 0 90" color=black></a-cylinder>
+
+    <!-- TEXT -->
+    <a-entity text="value: CPU; color:#ED1C24; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt"
+            position="2.03 2.104 0.420"></a-entity>
+    <a-entity text="value: GPU; color:#ED1C24; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt"
+            position="1.5 0.89 0.493"></a-entity>
+    <a-entity text="value: RAM; color:white; width:5; font: https://cdn.aframe.io/fonts/Monoid.fnt"
+            position="0.840 4.404 -0.890"
+            rotation="0 90 90"></a-entity>
+    <a-entity text="value: MOTHERBOARRD; color:#ED1C24; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt"
+            position="1.64 0.294 -1.07"></a-entity>
+</a-entity>
+                
+<a-entity id="GraphicsCard" position="3.21 0 -2.09" rotation="0 -16.16 0">
+    <a-entity text="value: About GPU \n A graphics processing unit (GPU), often known as a graphics card or video card, is a specialized electrical circuit that speeds up the production and rendering of pictures, video, and animations.\n Install!;
+            color:#eee; align: center; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt"
+            position="6.751 3.018 5.239"
+            rotation="0 -43.8 0"></a-entity>
+            <a-box position="6.852 2.222 5.127" color="#1f1f23" rotation="-90 64.15 -108" scale="1.4 0.29 0.34"
+            event-set__click="_event: click; _target: #gpu1; position: 0.223 0.444 -1.322; rotation: 180 5.06 0"></a-box>
+</a-entity>
+
+<a-entity id="CoolerCPU" position="5.75 -0.02 -3.69" rotation="0 -30.66 0">
+    <a-entity text="value: About CPU \n A central processing unit (CPU), often known as a main processor or simply processor, executes fundamental arithmetic, logic, regulating, and input/output (I/O) activities as specified by the program's instructions.\n Install!;; 
+            color:#eee; align: center; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt; letterSpacing: -0.63"
+            position="9.261 3.382 10.398"
+            rotation="0 -82.49 0"></a-entity>
+            <a-box position="9.404 2.457 10.362" color="#1f1f23" rotation="-90 25.340 -108" scale="1.4 0.29 0.34"
+            event-set__click="_event: click; _target: #cooler; position:0 -0.02 0.04; rotation: 0 0 0"> 
+            </a-box>
+            <a-box id="chip" position="-3.823 2.103 5.293" rotation="0 30 0" height="0.5" width="0.5" depth="0.08" color="#ED1C24"></a-box>
+</a-entity>
+
+            <a-entity id="ramStick" position="-2.48 -0.13 -2.45" rotation="0 20.2 0">
+    <a-entity text="value: About RAM \n RAM is a type of computer memory that can be read and modified in any sequence, and is commonly used to store working data and machine code. \n Install!;
+            color:#eee; align: center; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt; letterSpacing: -0.63"
+            position="-5.944 2.878 5.309"
+            rotation="0 43.8 0"></a-entity>
+            <a-box position="-6.062 2.215 5.139" color="#1f1f23" rotation="-90 -28.73 -108" scale="1.4 0.29 0.34"
+            event-set__click="_event: click; _target: #ram; position: 0 0 0; rotation: 0 0 0"></a-box>
+        </a-entity>
+
+    <a-entity text="value: About Motherboard \n The primary printed circuit board (PCB) of general-purpose computers and other extensible systems is termed a motherboard, sometimes known as a system board, mainboard, or mobo. ;
+            color:#eee; align: center; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt; letterSpacing: -0.63"
+            position="-6.7 2.711 9.482"
+            rotation="0 113.96 0"></a-entity>
+
+        <a-entity text="value: Welcome to the Animation section! \n\n Swipe left or right to discover the animation as well as info about it \n \n <------ ------>;
+            color:#eee; align: center; width:5; font:https://cdn.aframe.io/fonts/Monoid.fnt; letterSpacing: -0.63"
+            position="0 2.878 11.986"
+            rotation="0 -180 0">
+        </a-entity>
+    <a-sky color="#1f1f23"></a-sky>
+</a-scene>
+</html>
